@@ -110,6 +110,94 @@ collections:
 
       - { label: "SEO Description", name: "description", widget: "text" }
 
+  - name: "projects"
+    label: "Projects"
+    folder: "src/projects"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Client", name: "client", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk" }
+      - label: "Components"
+        name: "components"
+        widget: "list"
+        types:
+          - label: "Hero Banner"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "text" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Full Height", name: "fullHeight", widget: "boolean", default: true }
+              - label: "CTA"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string" }
+          
+          - label: "Two Columns"
+            name: "twoColumns"
+            widget: "object"
+            fields:
+              - label: "Columns"
+                name: "columns"
+                widget: "list"
+                fields:
+                  - { label: "Content", name: "content", widget: "markdown" }
+                max: 2
+          
+          - label: "Two Images"
+            name: "twoImages"
+            widget: "object"
+            fields:
+              - { label: "First Image", name: "first", widget: "image" }
+              - { label: "First Image Alt", name: "firstAlt", widget: "string" }
+              - { label: "Second Image", name: "second", widget: "image" }
+              - { label: "Second Image Alt", name: "secondAlt", widget: "string" }
+          
+          - label: "Three Columns"
+            name: "threeColumns"
+            widget: "object"
+            fields:
+              - label: "Columns"
+                name: "columns"
+                widget: "list"
+                fields:
+                  - { label: "Content", name: "content", widget: "markdown" }
+                max: 3
+          
+          - label: "Gallery"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                fields:
+                  - { label: "Image", name: "url", widget: "image" }
+                  - { label: "Alt Text", name: "alt", widget: "string" }
+          
+          - label: "Lead Magnet"
+            name: "leadMagnet"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Button Text", name: "buttonText", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Image Alt", name: "imageAlt", widget: "string" }
+      
+      - { label: "Challenge", name: "challenge", widget: "markdown" }
+      - { label: "Solution", name: "solution", widget: "markdown" }
+      - { label: "Results", name: "results", widget: "markdown" }
+      - { label: "Categories", name: "categories", widget: "list" }
+      - { label: "Tags", name: "tags", widget: "list" }
+
   - name: "posts"
     label: "Blog Posts"
     folder: "src/posts"
@@ -119,6 +207,7 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
       - label: "Components"
         name: "components"
         widget: "list"
