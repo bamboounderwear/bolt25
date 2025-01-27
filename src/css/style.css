@@ -196,18 +196,32 @@ section:not(:first-child) {
 }
 
 .menu-overlay.is-active {
-  display: block;
+  display: flex;
   opacity: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-overlay .container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .menu-overlay ul {
   list-style: none;
-  padding: var(--space-xl) 0;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 .menu-overlay ul li {
   margin-bottom: var(--space-md);
-  text-align: center;
+}
+
+.menu-overlay ul li:last-child {
+  margin-bottom: 0;
 }
 
 .menu-overlay ul li a {
@@ -216,6 +230,8 @@ section:not(:first-child) {
   font-size: var(--font-size-lg);
   font-weight: 500;
   transition: color 0.3s ease;
+  display: inline-block;
+  padding: var(--space-xs) 0;
 }
 
 .menu-overlay ul li a:hover {
