@@ -75,9 +75,9 @@ document.querySelectorAll('.animate-on-scroll').forEach((element) => {
 document.addEventListener('DOMContentLoaded', () => {
   const popup = document.getElementById('popup');
   const popupClose = popup?.querySelector('.popup__close');
-  const hasSeenPopup = sessionStorage.getItem('hasSeenPopup');
+  const hasInteractedWithPopup = localStorage.getItem('hasInteractedWithPopup');
   
-  if (popup && !hasSeenPopup) {
+  if (popup && !hasInteractedWithPopup) {
     setTimeout(() => {
       popup.classList.add('is-active');
     }, 5000); // 5 seconds delay
@@ -86,7 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (popupClose) {
     popupClose.addEventListener('click', () => {
       popup.classList.remove('is-active');
-      sessionStorage.setItem('hasSeenPopup', 'true');
+      localStorage.setItem('hasInteractedWithPopup', 'true');
+    });
+  }
+
+  // Handle form submission
+  const popupForm = popup?.querySelector('form');
+  if (popupForm) {
+    popupForm.addEventListener('submit', (e) => {
+      // Let the form submit normally, but set the localStorage item
+      localStorage.setItem('hasInteractedWithPopup', 'true');
     });
   }
 });
