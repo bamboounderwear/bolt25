@@ -1,0 +1,11 @@
+{% if componentData.type == "gallery" %}
+  <div class="gallery container">
+    <div class="gallery__grid">
+      {% for image in componentData.images %}
+        <div class="gallery__item">
+          <img src="{{ image.url }}" alt="{{ image.alt }}">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

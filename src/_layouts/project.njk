@@ -1,0 +1,25 @@
+---
+layout: base.njk
+---
+<article class="project">
+  <nav class="project-navigation container">
+    <div class="project-navigation__grid">
+      {%- set previousPost = collections.projects | getPreviousCollectionItem %}
+      {%- set nextPost = collections.projects | getNextCollectionItem %}
+
+      {% if previousPost %}
+        <a href="{{ previousPost.url }}" class="project-navigation__item project-navigation__item--prev">
+          <span>Previous Project</span>
+          <h3>{{ previousPost.data.title }}</h3>
+        </a>
+      {% endif %}
+
+      {% if nextPost %}
+        <a href="{{ nextPost.url }}" class="project-navigation__item project-navigation__item--next">
+          <span>Next Project</span>
+          <h3>{{ nextPost.data.title }}</h3>
+        </a>
+      {% endif %}
+    </div>
+  </nav>
+</article>

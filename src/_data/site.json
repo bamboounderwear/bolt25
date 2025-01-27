@@ -1,0 +1,28 @@
+{
+  "title": "Modern Marketing Agency",
+  "description": "A forward-thinking digital marketing agency specializing in brand strategy and creative solutions",
+  "url": "https://example.com",
+  "social": {
+    "twitter": "https://twitter.com/agency",
+    "twitterHandle": "@agency",
+    "instagram": "https://instagram.com/agency",
+    "instagramHandle": "@agency",
+    "linkedin": "https://linkedin.com/company/agency",
+    "linkedinHandle": "agency"
+  },
+  "popup": {
+    "enabled": true,
+    "title": "Subscribe to Our Newsletter",
+    "content": "Get the latest marketing insights and strategies delivered to your inbox.",
+    "buttonText": "Subscribe Now",
+    "delay": 5,
+    "showOnce": true
+  },
+  "cookieConsent": {
+    "enabled": true,
+    "title": "Cookie Policy",
+    "content": "We use cookies to enhance your browsing experience and analyze our traffic. By clicking Accept, you consent to our use of cookies.",
+    "acceptText": "Accept All Cookies",
+    "declineText": "Decline"
+  }
+}
