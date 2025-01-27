@@ -65,7 +65,8 @@ body {
   background-color: #000000;
   color: #FFFFFF;
   line-height: var(--ratio-4);
-  padding-top: var(--navbar-height);
+  /* Remove padding-top to allow hero to start at the very top */
+  padding-top: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -232,7 +233,7 @@ section:not(:first-child) {
 /* Hero */
 .hero {
   position: relative;
-  height: calc(100vh - var(--navbar-height));
+  height: 100vh;
   min-height: 600px;
   display: flex;
   align-items: center;
@@ -240,6 +241,10 @@ section:not(:first-child) {
   overflow: hidden;
   background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
   margin-bottom: var(--section-spacing);
+  /* Add negative margin to start from the very top */
+  margin-top: calc(var(--navbar-height) * -1);
+  /* Add padding-top to push content below navbar */
+  padding-top: var(--navbar-height);
 }
 
 .hero--full-height {
