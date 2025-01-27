@@ -277,7 +277,7 @@ section:not(:first-child) {
 .hero__content {
   text-align: center;
   z-index: 1;
-  max-width: 800px;
+  max-width: 1440px;
   padding: var(--component-spacing);
   padding-top: calc(var(--navbar-height) + var(--space-xl)); /* Added extra padding for header */
 }
