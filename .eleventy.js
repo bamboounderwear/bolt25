@@ -77,9 +77,15 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
-  // Add posts collection
-  eleventyConfig.addCollection("posts", function(collectionApi) {
+  // Add posts collection for each language
+  eleventyConfig.addCollection("posts_en", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => {
+      return b.date - a.date;
+    });
+  });
+
+  eleventyConfig.addCollection("posts_fr", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/posts/fr/*.md").sort((a, b) => {
       return b.date - a.date;
     });
   });
