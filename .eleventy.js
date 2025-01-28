@@ -102,21 +102,16 @@ module.exports = function(eleventyConfig) {
     });
   });
 
-  // Add localized URL filter
-  eleventyConfig.addFilter("localizeUrl", function(url, locale) {
-    if (locale === "fr") {
-      return `/fr${url}`;
+  // Add permalink filter
+  eleventyConfig.addFilter("generatePermalink", function(page) {
+    const locale = page.data.locale || 'en';
+    const collection = page.inputPath.includes('/posts/') ? 'blog' : 'projects';
+    const slug = page.fileSlug;
+    
+    if (locale === 'fr') {
+      return `/fr/${collection}/${slug}/`;
     }
-    return url;
-  });
-
-  // Add language name filter
-  eleventyConfig.addFilter("languageName", function(locale) {
-    const languages = {
-      en: "English",
-      fr: "Français"
-    };
-    return languages[locale] || locale;
+    return `/${collection}/${slug}/`;
   });
 
   return {
