@@ -1,28 +1,58 @@
 {
-  "title": "Modern Marketing Agency",
-  "description": "A forward-thinking digital marketing agency specializing in brand strategy and creative solutions",
-  "url": "https://example.com",
-  "social": {
-    "twitter": "https://twitter.com/agency",
-    "twitterHandle": "@agency",
-    "instagram": "https://instagram.com/agency",
-    "instagramHandle": "@agency",
-    "linkedin": "https://linkedin.com/company/agency",
-    "linkedinHandle": "agency"
+  "en": {
+    "title": "Modern Marketing Agency",
+    "description": "A forward-thinking digital marketing agency specializing in brand strategy and creative solutions",
+    "url": "https://example.com",
+    "social": {
+      "twitter": "https://twitter.com/agency",
+      "twitterHandle": "@agency",
+      "instagram": "https://instagram.com/agency",
+      "instagramHandle": "@agency",
+      "linkedin": "https://linkedin.com/company/agency",
+      "linkedinHandle": "agency"
+    },
+    "popup": {
+      "enabled": true,
+      "title": "Subscribe to Our Newsletter",
+      "content": "Get the latest marketing insights and strategies delivered to your inbox.",
+      "buttonText": "Subscribe Now",
+      "delay": 5,
+      "showOnce": true
+    },
+    "cookieConsent": {
+      "enabled": true,
+      "title": "Cookie Policy",
+      "content": "We use cookies to enhance your browsing experience and analyze our traffic. By clicking Accept, you consent to our use of cookies.",
+      "acceptText": "Accept All Cookies",
+      "declineText": "Decline"
+    }
   },
-  "popup": {
-    "enabled": true,
-    "title": "Subscribe to Our Newsletter",
-    "content": "Get the latest marketing insights and strategies delivered to your inbox.",
-    "buttonText": "Subscribe Now",
-    "delay": 5,
-    "showOnce": true
-  },
-  "cookieConsent": {
-    "enabled": true,
-    "title": "Cookie Policy",
-    "content": "We use cookies to enhance your browsing experience and analyze our traffic. By clicking Accept, you consent to our use of cookies.",
-    "acceptText": "Accept All Cookies",
-    "declineText": "Decline"
+  "fr": {
+    "title": "Agence de Marketing Moderne",
+    "description": "Une agence de marketing digital innovante spécialisée dans la stratégie de marque et les solutions créatives",
+    "url": "https://example.com",
+    "social": {
+      "twitter": "https://twitter.com/agency",
+      "twitterHandle": "@agency",
+      "instagram": "https://instagram.com/agency",
+      "instagramHandle": "@agency",
+      "linkedin": "https://linkedin.com/company/agency",
+      "linkedinHandle": "agency"
+    },
+    "popup": {
+      "enabled": true,
+      "title": "Abonnez-vous à Notre Newsletter",
+      "content": "Recevez les derniers insights et stratégies marketing directement dans votre boîte mail.",
+      "buttonText": "S'abonner",
+      "delay": 5,
+      "showOnce": true
+    },
+    "cookieConsent": {
+      "enabled": true,
+      "title": "Politique des Cookies",
+      "content": "Nous utilisons des cookies pour améliorer votre expérience de navigation et analyser notre trafic. En cliquant sur Accepter, vous consentez à notre utilisation des cookies.",
+      "acceptText": "Accepter tous les cookies",
+      "declineText": "Refuser"
+    }
   }
 }

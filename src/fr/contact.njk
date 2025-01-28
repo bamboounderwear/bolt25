@@ -1,0 +1,62 @@
+---
+layout: base.njk
+title: Contact
+description: Contactez-nous pour discuter de votre prochain projet
+permalink: /fr/contact/
+---
+
+<header class="page-header">
+  <div class="container container--narrow">
+    <h1>Contactez-nous</h1>
+    <p>Créons ensemble quelque chose d'extraordinaire</p>
+  </div>
+</header>
+
+<section class="container">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Prenez Contact</h2>
+      <p>Nous sommes toujours à la recherche de nouveaux projets et collaborations. Contactez-nous pour démarrer la conversation.</p>
+      
+      <div class="contact-details">
+        <div class="contact-item">
+          <h3>Email</h3>
+          <p><a href="mailto:hello@agency.com">hello@agency.com</a></p>
+        </div>
+        
+        <div class="contact-item">
+          <h3>Téléphone</h3>
+          <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+        </div>
+        
+        <div class="contact-item">
+          <h3>Suivez-nous</h3>
+          <div class="social-links">
+            <a href="{{ site.social.twitter }}">Twitter</a>
+            <a href="{{ site.social.instagram }}">Instagram</a>
+            <a href="{{ site.social.linkedin }}">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <form class="contact-form" name="contact" method="POST" data-netlify="true">
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      
+      <button type="submit" class="button">Envoyer le Message</button>
+    </form>
+  </div>
+</section>
