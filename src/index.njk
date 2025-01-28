@@ -2,12 +2,13 @@
 layout: base.njk
 title: Home
 description: Modern digital marketing agency specializing in brand strategy and creative solutions
+locale: en
 ---
 
 <section class="hero">
   <img class="hero__background" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Modern Marketing Agency">
   <div class="hero__content">
-    <h1 class="animate-on-scroll">Modern Marketing Agency</h1>
+    <h1 class="animate-on-scroll">{{ site[locale].title }}</h1>
     <p class="animate-on-scroll">We create digital experiences that transform brands</p>
     <a href="#contact" class="button animate-on-scroll">Get in Touch</a>
   </div>
@@ -37,7 +38,7 @@ description: Modern digital marketing agency specializing in brand strategy and 
       <p>Explore some of our recent work and success stories</p>
     </div>
     <div class="grid">
-      {%- for project in collections.projects | reverse | limit(2) -%}
+      {%- for project in collections.projects_en | reverse | limit(2) -%}
         <article class="project-card animate-on-scroll">
           {% if project.data.featuredImage %}
             <img src="{{ project.data.featuredImage }}" alt="{{ project.data.title }}">
@@ -90,11 +91,11 @@ description: Modern digital marketing agency specializing in brand strategy and 
 <section class="lead-magnet container">
   <div class="lead-magnet__grid">
     <div class="lead-magnet__content">
-      <h2>Get Our Marketing Insights</h2>
-      <p>Subscribe to our newsletter for the latest trends, strategies, and insights in digital marketing.</p>
+      <h2>{{ site[locale].popup.title }}</h2>
+      <p>{{ site[locale].popup.content | safe }}</p>
       <form class="lead-magnet__form" name="newsletter" method="POST" data-netlify="true">
         <input type="email" name="email" placeholder="Enter your email" required>
-        <button type="submit" class="button">Subscribe</button>
+        <button type="submit" class="button">{{ site[locale].popup.buttonText }}</button>
       </form>
     </div>
     <div class="lead-magnet__image">
