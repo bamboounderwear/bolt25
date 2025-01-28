@@ -33,16 +33,16 @@ collections:
               - { label: "Type", name: "type", widget: "select", options: ["image", "video"] }
               - { label: "Title", name: "title", widget: "string", i18n: true }
               - { label: "Subtitle", name: "subtitle", widget: "text", i18n: true }
-              - { label: "Image", name: "image", widget: "image", required: false, i18n: duplicate }
-              - { label: "Video URL", name: "videoUrl", widget: "string", required: false, i18n: duplicate }
-              - { label: "Full Height", name: "fullHeight", widget: "boolean", default: false, i18n: duplicate }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Video URL", name: "videoUrl", widget: "string", required: false }
+              - { label: "Full Height", name: "fullHeight", widget: "boolean", default: false }
               - label: "CTA"
                 name: "cta"
                 widget: "object"
                 i18n: true
                 fields:
                   - { label: "Text", name: "text", widget: "string", i18n: true }
-                  - { label: "URL", name: "url", widget: "string", i18n: duplicate }
+                  - { label: "URL", name: "url", widget: "string" }
           
           - label: "Page Title"
             name: "pageTitle"
@@ -64,9 +64,9 @@ collections:
             widget: "object"
             i18n: true
             fields:
-              - { label: "First Image", name: "first", widget: "image", i18n: duplicate }
+              - { label: "First Image", name: "first", widget: "image" }
               - { label: "First Image Alt", name: "firstAlt", widget: "string", i18n: true }
-              - { label: "Second Image", name: "second", widget: "image", i18n: duplicate }
+              - { label: "Second Image", name: "second", widget: "image" }
               - { label: "Second Image Alt", name: "secondAlt", widget: "string", i18n: true }
           
           - label: "Image and Markdown"
@@ -74,8 +74,8 @@ collections:
             widget: "object"
             i18n: true
             fields:
-              - { label: "Image Position", name: "imagePosition", widget: "select", options: ["left", "right"], i18n: duplicate }
-              - { label: "Image", name: "image", widget: "image", i18n: duplicate }
+              - { label: "Image Position", name: "imagePosition", widget: "select", options: ["left", "right"] }
+              - { label: "Image", name: "image", widget: "image" }
               - { label: "Image Alt", name: "imageAlt", widget: "string", i18n: true }
               - { label: "Content", name: "content", widget: "markdown", i18n: true }
           
@@ -102,7 +102,7 @@ collections:
                 widget: "list"
                 i18n: true
                 fields:
-                  - { label: "Image", name: "url", widget: "image", i18n: duplicate }
+                  - { label: "Image", name: "url", widget: "image" }
                   - { label: "Alt Text", name: "alt", widget: "string", i18n: true }
           
           - label: "Two Columns"
@@ -126,7 +126,7 @@ collections:
               - { label: "Title", name: "title", widget: "string", i18n: true }
               - { label: "Description", name: "description", widget: "text", i18n: true }
               - { label: "Button Text", name: "buttonText", widget: "string", i18n: true }
-              - { label: "Image", name: "image", widget: "image", i18n: duplicate }
+              - { label: "Image", name: "image", widget: "image" }
               - { label: "Image Alt", name: "imageAlt", widget: "string", i18n: true }
 
       - { label: "SEO Description", name: "description", widget: "text", i18n: true }
@@ -139,8 +139,8 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
       - { label: "Client", name: "client", widget: "string", i18n: true }
-      - { label: "Date", name: "date", widget: "datetime", i18n: duplicate }
-      - { label: "Featured Image", name: "featuredImage", widget: "image", i18n: duplicate }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk" }
       - label: "Components"
@@ -155,15 +155,15 @@ collections:
             fields:
               - { label: "Title", name: "title", widget: "string", i18n: true }
               - { label: "Subtitle", name: "subtitle", widget: "text", i18n: true }
-              - { label: "Image", name: "image", widget: "image", i18n: duplicate }
-              - { label: "Full Height", name: "fullHeight", widget: "boolean", default: true, i18n: duplicate }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Full Height", name: "fullHeight", widget: "boolean", default: true }
               - label: "CTA"
                 name: "cta"
                 widget: "object"
                 i18n: true
                 fields:
                   - { label: "Text", name: "text", widget: "string", i18n: true }
-                  - { label: "URL", name: "url", widget: "string", i18n: duplicate }
+                  - { label: "URL", name: "url", widget: "string" }
           
           - label: "Two Columns"
             name: "twoColumns"
@@ -183,9 +183,9 @@ collections:
             widget: "object"
             i18n: true
             fields:
-              - { label: "First Image", name: "first", widget: "image", i18n: duplicate }
+              - { label: "First Image", name: "first", widget: "image" }
               - { label: "First Image Alt", name: "firstAlt", widget: "string", i18n: true }
-              - { label: "Second Image", name: "second", widget: "image", i18n: duplicate }
+              - { label: "Second Image", name: "second", widget: "image" }
               - { label: "Second Image Alt", name: "secondAlt", widget: "string", i18n: true }
           
           - label: "Three Columns"
@@ -211,7 +211,7 @@ collections:
                 widget: "list"
                 i18n: true
                 fields:
-                  - { label: "Image", name: "url", widget: "image", i18n: duplicate }
+                  - { label: "Image", name: "url", widget: "image" }
                   - { label: "Alt Text", name: "alt", widget: "string", i18n: true }
           
           - label: "Lead Magnet"
@@ -222,14 +222,14 @@ collections:
               - { label: "Title", name: "title", widget: "string", i18n: true }
               - { label: "Description", name: "description", widget: "text", i18n: true }
               - { label: "Button Text", name: "buttonText", widget: "string", i18n: true }
-              - { label: "Image", name: "image", widget: "image", i18n: duplicate }
+              - { label: "Image", name: "image", widget: "image" }
               - { label: "Image Alt", name: "imageAlt", widget: "string", i18n: true }
       
       - { label: "Challenge", name: "challenge", widget: "markdown", i18n: true }
       - { label: "Solution", name: "solution", widget: "markdown", i18n: true }
       - { label: "Results", name: "results", widget: "markdown", i18n: true }
-      - { label: "Categories", name: "categories", widget: "list", i18n: duplicate }
-      - { label: "Tags", name: "tags", widget: "list", i18n: duplicate }
+      - { label: "Categories", name: "categories", widget: "list" }
+      - { label: "Tags", name: "tags", widget: "list" }
 
   - name: "posts"
     label: "Blog Posts"
@@ -238,8 +238,8 @@ collections:
     i18n: true
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
-      - { label: "Date", name: "date", widget: "datetime", i18n: duplicate }
-      - { label: "Featured Image", name: "featuredImage", widget: "image", i18n: duplicate }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
       - label: "Components"
@@ -259,9 +259,9 @@ collections:
             widget: "object"
             i18n: true
             fields:
-              - { label: "First Image", name: "first", widget: "image", i18n: duplicate }
+              - { label: "First Image", name: "first", widget: "image" }
               - { label: "First Image Alt", name: "firstAlt", widget: "string", i18n: true }
-              - { label: "Second Image", name: "second", widget: "image", i18n: duplicate }
+              - { label: "Second Image", name: "second", widget: "image" }
               - { label: "Second Image Alt", name: "secondAlt", widget: "string", i18n: true }
           
           - label: "Image and Markdown"
@@ -269,8 +269,8 @@ collections:
             widget: "object"
             i18n: true
             fields:
-              - { label: "Image Position", name: "imagePosition", widget: "select", options: ["left", "right"], i18n: duplicate }
-              - { label: "Image", name: "image", widget: "image", i18n: duplicate }
+              - { label: "Image Position", name: "imagePosition", widget: "select", options: ["left", "right"] }
+              - { label: "Image", name: "image", widget: "image" }
               - { label: "Image Alt", name: "imageAlt", widget: "string", i18n: true }
               - { label: "Content", name: "content", widget: "markdown", i18n: true }
           
@@ -282,11 +282,11 @@ collections:
               - { label: "Title", name: "title", widget: "string", i18n: true }
               - { label: "Description", name: "description", widget: "text", i18n: true }
               - { label: "Button Text", name: "buttonText", widget: "string", i18n: true }
-              - { label: "Image", name: "image", widget: "image", i18n: duplicate }
+              - { label: "Image", name: "image", widget: "image" }
               - { label: "Image Alt", name: "imageAlt", widget: "string", i18n: true }
       
-      - { label: "Categories", name: "categories", widget: "list", i18n: duplicate }
-      - { label: "Tags", name: "tags", widget: "list", i18n: duplicate }
+      - { label: "Categories", name: "categories", widget: "list" }
+      - { label: "Tags", name: "tags", widget: "list" }
 
   - name: "settings"
     label: "Settings"
@@ -296,38 +296,75 @@ collections:
         file: "src/_data/site.json"
         i18n: true
         fields:
-          - { label: "Site Title", name: "title", widget: "string", i18n: true }
-          - { label: "Site Description", name: "description", widget: "text", i18n: true }
-          - { label: "Site URL", name: "url", widget: "string", i18n: duplicate }
-          - label: "Social Media"
-            name: "social"
+          - label: "English"
+            name: "en"
             widget: "object"
-            i18n: duplicate
             fields:
-              - { label: "Twitter URL", name: "twitter", widget: "string" }
-              - { label: "Twitter Handle", name: "twitterHandle", widget: "string" }
-              - { label: "Instagram URL", name: "instagram", widget: "string" }
-              - { label: "Instagram Handle", name: "instagramHandle", widget: "string" }
-              - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
-              - { label: "LinkedIn Handle", name: "linkedinHandle", widget: "string" }
-          - label: "Popup Settings"
-            name: "popup"
+              - { label: "Site Title", name: "title", widget: "string" }
+              - { label: "Site Description", name: "description", widget: "text" }
+              - { label: "Site URL", name: "url", widget: "string" }
+              - label: "Social Media"
+                name: "social"
+                widget: "object"
+                fields:
+                  - { label: "Twitter URL", name: "twitter", widget: "string" }
+                  - { label: "Twitter Handle", name: "twitterHandle", widget: "string" }
+                  - { label: "Instagram URL", name: "instagram", widget: "string" }
+                  - { label: "Instagram Handle", name: "instagramHandle", widget: "string" }
+                  - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+                  - { label: "LinkedIn Handle", name: "linkedinHandle", widget: "string" }
+              - label: "Popup Settings"
+                name: "popup"
+                widget: "object"
+                fields:
+                  - { label: "Enable Popup", name: "enabled", widget: "boolean", default: true }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Content", name: "content", widget: "markdown" }
+                  - { label: "Button Text", name: "buttonText", widget: "string" }
+                  - { label: "Delay (in seconds)", name: "delay", widget: "number", default: 5 }
+                  - { label: "Show Once Per Session", name: "showOnce", widget: "boolean", default: true }
+              - label: "Cookie Consent"
+                name: "cookieConsent"
+                widget: "object"
+                fields:
+                  - { label: "Enable Cookie Banner", name: "enabled", widget: "boolean", default: true }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Content", name: "content", widget: "markdown" }
+                  - { label: "Accept Button Text", name: "acceptText", widget: "string" }
+                  - { label: "Decline Button Text", name: "declineText", widget: "string" }
+          - label: "French"
+            name: "fr"
             widget: "object"
-            i18n: true
             fields:
-              - { label: "Enable Popup", name: "enabled", widget: "boolean", default: true }
-              - { label: "Title", name: "title", widget: "string", i18n: true }
-              - { label: "Content", name: "content", widget: "markdown", i18n: true }
-              - { label: "Button Text", name: "buttonText", widget: "string", i18n: true }
-              - { label: "Delay (in seconds)", name: "delay", widget: "number", default: 5, i18n: duplicate }
-              - { label: "Show Once Per Session", name: "showOnce", widget: "boolean", default: true, i18n: duplicate }
-          - label: "Cookie Consent"
-            name: "cookieConsent"
-            widget: "object"
-            i18n: true
-            fields:
-              - { label: "Enable Cookie Banner", name: "enabled", widget: "boolean", default: true }
-              - { label: "Title", name: "title", widget: "string", i18n: true }
-              - { label: "Content", name: "content", widget: "markdown", i18n: true }
-              - { label: "Accept Button Text", name: "acceptText", widget: "string", i18n: true }
-              - { label: "Decline Button Text", name: "declineText", widget: "string", i18n: true }
+              - { label: "Site Title", name: "title", widget: "string" }
+              - { label: "Site Description", name: "description", widget: "text" }
+              - { label: "Site URL", name: "url", widget: "string" }
+              - label: "Social Media"
+                name: "social"
+                widget: "object"
+                fields:
+                  - { label: "Twitter URL", name: "twitter", widget: "string" }
+                  - { label: "Twitter Handle", name: "twitterHandle", widget: "string" }
+                  - { label: "Instagram URL", name: "instagram", widget: "string" }
+                  - { label: "Instagram Handle", name: "instagramHandle", widget: "string" }
+                  - { label: "LinkedIn URL", name: "linkedin", widget: "string" }
+                  - { label: "LinkedIn Handle", name: "linkedinHandle", widget: "string" }
+              - label: "Popup Settings"
+                name: "popup"
+                widget: "object"
+                fields:
+                  - { label: "Enable Popup", name: "enabled", widget: "boolean", default: true }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Content", name: "content", widget: "markdown" }
+                  - { label: "Button Text", name: "buttonText", widget: "string" }
+                  - { label: "Delay (in seconds)", name: "delay", widget: "number", default: 5 }
+                  - { label: "Show Once Per Session", name: "showOnce", widget: "boolean", default: true }
+              - label: "Cookie Consent"
+                name: "cookieConsent"
+                widget: "object"
+                fields:
+                  - { label: "Enable Cookie Banner", name: "enabled", widget: "boolean", default: true }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Content", name: "content", widget: "markdown" }
+                  - { label: "Accept Button Text", name: "acceptText", widget: "string" }
+                  - { label: "Decline Button Text", name: "declineText", widget: "string" }
