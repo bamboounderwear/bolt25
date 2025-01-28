@@ -2,6 +2,7 @@
 layout: project.njk
 title: E-commerce Platform Redesign
 client: FashionForward
+locale: en
 date: 2023-11-15
 featuredImage: https://images.unsplash.com/photo-1460925895917-afdab827c52f
 components:

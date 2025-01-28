@@ -5,6 +5,7 @@ date: 2023-12-15
 permalink: "/blog/{{ page.fileSlug }}/"
 featuredImage: https://images.unsplash.com/photo-1460925895917-afdab827c52f
 excerpt: Explore the emerging trends that will shape digital marketing strategies in 2024 and beyond.
+locale: en
 components:
   - type: hero
     title: The Future of Digital Marketing in 2024

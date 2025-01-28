@@ -2,6 +2,7 @@
 layout: project.njk
 title: Brand Refresh for Tech Startup
 client: InnovateTech
+locale: en
 date: 2023-12-01
 components:
   - type: hero
