@@ -3,6 +3,10 @@
     "title": "Modern Marketing Agency",
     "description": "A forward-thinking digital marketing agency specializing in brand strategy and creative solutions",
     "url": "https://example.com",
+    "nav": {
+      "home": "Home",
+      "projects": "Projects"
+    },
     "social": {
       "twitter": "https://twitter.com/agency",
       "twitterHandle": "@agency",
@@ -31,6 +35,10 @@
     "title": "Agence de Marketing Moderne",
     "description": "Une agence de marketing digital innovante spécialisée dans la stratégie de marque et les solutions créatives",
     "url": "https://example.com",
+    "nav": {
+      "home": "Accueil",
+      "projects": "Projets"
+    },
     "social": {
       "twitter": "https://twitter.com/agency",
       "twitterHandle": "@agency",
