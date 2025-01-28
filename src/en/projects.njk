@@ -3,6 +3,7 @@ layout: base.njk
 title: Projects
 description: Our portfolio of client work and case studies
 eleventyExcludeFromCollections: true
+locale: en
 ---
 
 <header class="page-header">
@@ -14,7 +15,7 @@ eleventyExcludeFromCollections: true
 
 <section class="container">
   <div class="grid">
-    {%- for project in collections.projects | reverse -%}
+    {%- for project in collections.projects_en | reverse -%}
       <article class="project-card animate-on-scroll">
         {% if project.data.featuredImage %}
           <img src="{{ project.data.featuredImage }}" alt="{{ project.data.title }}">
