@@ -5,7 +5,6 @@ backend:
 media_folder: "src/assets/images"
 public_folder: "/assets/images"
 
-# i18n Configuration
 i18n:
   structure: multiple_folders
   locales: [en, fr]
@@ -20,6 +19,9 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "page.njk" }
+      - { label: "Description", name: "description", widget: "text", i18n: true }
+      - { label: "Permalink", name: "permalink", widget: "string", i18n: true }
+      - { label: "Locale", name: "locale", widget: "hidden", i18n: duplicate }
       - label: "Components"
         name: "components"
         widget: "list"
@@ -28,26 +30,21 @@ collections:
           - label: "Hero Banner"
             name: "hero"
             widget: "object"
-            i18n: true
             fields:
-              - { label: "Type", name: "type", widget: "select", options: ["image", "video"] }
               - { label: "Title", name: "title", widget: "string", i18n: true }
               - { label: "Subtitle", name: "subtitle", widget: "text", i18n: true }
-              - { label: "Image", name: "image", widget: "image", required: false }
-              - { label: "Video URL", name: "videoUrl", widget: "string", required: false }
+              - { label: "Image", name: "image", widget: "image" }
               - { label: "Full Height", name: "fullHeight", widget: "boolean", default: false }
               - label: "CTA"
                 name: "cta"
                 widget: "object"
-                i18n: true
                 fields:
                   - { label: "Text", name: "text", widget: "string", i18n: true }
-                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string", i18n: true }
           
           - label: "Page Title"
             name: "pageTitle"
             widget: "object"
-            i18n: true
             fields:
               - { label: "Title", name: "title", widget: "string", i18n: true }
               - { label: "Subtitle", name: "subtitle", widget: "text", i18n: true }
@@ -55,14 +52,12 @@ collections:
           - label: "Markdown Block"
             name: "markdown"
             widget: "object"
-            i18n: true
             fields:
               - { label: "Content", name: "content", widget: "markdown", i18n: true }
           
           - label: "Two Images"
             name: "twoImages"
             widget: "object"
-            i18n: true
             fields:
               - { label: "First Image", name: "first", widget: "image" }
               - { label: "First Image Alt", name: "firstAlt", widget: "string", i18n: true }
@@ -72,7 +67,6 @@ collections:
           - label: "Image and Markdown"
             name: "imageMarkdown"
             widget: "object"
-            i18n: true
             fields:
               - { label: "Image Position", name: "imagePosition", widget: "select", options: ["left", "right"] }
               - { label: "Image", name: "image", widget: "image" }
@@ -82,12 +76,10 @@ collections:
           - label: "Three Columns"
             name: "threeColumns"
             widget: "object"
-            i18n: true
             fields:
               - label: "Columns"
                 name: "columns"
                 widget: "list"
-                i18n: true
                 fields:
                   - { label: "Content", name: "content", widget: "markdown", i18n: true }
                 max: 3
@@ -95,12 +87,10 @@ collections:
           - label: "Gallery"
             name: "gallery"
             widget: "object"
-            i18n: true
             fields:
               - label: "Images"
                 name: "images"
                 widget: "list"
-                i18n: true
                 fields:
                   - { label: "Image", name: "url", widget: "image" }
                   - { label: "Alt Text", name: "alt", widget: "string", i18n: true }
@@ -108,12 +98,10 @@ collections:
           - label: "Two Columns"
             name: "twoColumns"
             widget: "object"
-            i18n: true
             fields:
               - label: "Columns"
                 name: "columns"
                 widget: "list"
-                i18n: true
                 fields:
                   - { label: "Content", name: "content", widget: "markdown", i18n: true }
                 max: 2
@@ -121,15 +109,12 @@ collections:
           - label: "Lead Magnet"
             name: "leadMagnet"
             widget: "object"
-            i18n: true
             fields:
               - { label: "Title", name: "title", widget: "string", i18n: true }
               - { label: "Description", name: "description", widget: "text", i18n: true }
               - { label: "Button Text", name: "buttonText", widget: "string", i18n: true }
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Image Alt", name: "imageAlt", widget: "string", i18n: true }
-
-      - { label: "SEO Description", name: "description", widget: "text", i18n: true }
 
   - name: "projects"
     label: "Projects"
@@ -143,6 +128,8 @@ collections:
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk" }
+      - { label: "Permalink", name: "permalink", widget: "string", i18n: true }
+      - { label: "Locale", name: "locale", widget: "hidden", i18n: duplicate }
       - label: "Components"
         name: "components"
         widget: "list"
@@ -151,7 +138,6 @@ collections:
           - label: "Hero Banner"
             name: "hero"
             widget: "object"
-            i18n: true
             fields:
               - { label: "Title", name: "title", widget: "string", i18n: true }
               - { label: "Subtitle", name: "subtitle", widget: "text", i18n: true }
@@ -160,20 +146,17 @@ collections:
               - label: "CTA"
                 name: "cta"
                 widget: "object"
-                i18n: true
                 fields:
                   - { label: "Text", name: "text", widget: "string", i18n: true }
-                  - { label: "URL", name: "url", widget: "string" }
+                  - { label: "URL", name: "url", widget: "string", i18n: true }
           
           - label: "Two Columns"
             name: "twoColumns"
             widget: "object"
-            i18n: true
             fields:
               - label: "Columns"
                 name: "columns"
                 widget: "list"
-                i18n: true
                 fields:
                   - { label: "Content", name: "content", widget: "markdown", i18n: true }
                 max: 2
@@ -181,7 +164,6 @@ collections:
           - label: "Two Images"
             name: "twoImages"
             widget: "object"
-            i18n: true
             fields:
               - { label: "First Image", name: "first", widget: "image" }
               - { label: "First Image Alt", name: "firstAlt", widget: "string", i18n: true }
@@ -191,12 +173,10 @@ collections:
           - label: "Three Columns"
             name: "threeColumns"
             widget: "object"
-            i18n: true
             fields:
               - label: "Columns"
                 name: "columns"
                 widget: "list"
-                i18n: true
                 fields:
                   - { label: "Content", name: "content", widget: "markdown", i18n: true }
                 max: 3
@@ -204,12 +184,10 @@ collections:
           - label: "Gallery"
             name: "gallery"
             widget: "object"
-            i18n: true
             fields:
               - label: "Images"
                 name: "images"
                 widget: "list"
-                i18n: true
                 fields:
                   - { label: "Image", name: "url", widget: "image" }
                   - { label: "Alt Text", name: "alt", widget: "string", i18n: true }
@@ -217,7 +195,6 @@ collections:
           - label: "Lead Magnet"
             name: "leadMagnet"
             widget: "object"
-            i18n: true
             fields:
               - { label: "Title", name: "title", widget: "string", i18n: true }
               - { label: "Description", name: "description", widget: "text", i18n: true }
@@ -242,6 +219,8 @@ collections:
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
+      - { label: "Permalink", name: "permalink", widget: "string", i18n: true }
+      - { label: "Locale", name: "locale", widget: "hidden", i18n: duplicate }
       - label: "Components"
         name: "components"
         widget: "list"
@@ -250,14 +229,12 @@ collections:
           - label: "Markdown Block"
             name: "markdown"
             widget: "object"
-            i18n: true
             fields:
               - { label: "Content", name: "content", widget: "markdown", i18n: true }
           
           - label: "Two Images"
             name: "twoImages"
             widget: "object"
-            i18n: true
             fields:
               - { label: "First Image", name: "first", widget: "image" }
               - { label: "First Image Alt", name: "firstAlt", widget: "string", i18n: true }
@@ -267,7 +244,6 @@ collections:
           - label: "Image and Markdown"
             name: "imageMarkdown"
             widget: "object"
-            i18n: true
             fields:
               - { label: "Image Position", name: "imagePosition", widget: "select", options: ["left", "right"] }
               - { label: "Image", name: "image", widget: "image" }
@@ -277,7 +253,6 @@ collections:
           - label: "Lead Magnet"
             name: "leadMagnet"
             widget: "object"
-            i18n: true
             fields:
               - { label: "Title", name: "title", widget: "string", i18n: true }
               - { label: "Description", name: "description", widget: "text", i18n: true }
@@ -294,7 +269,6 @@ collections:
       - name: "site"
         label: "Site Settings"
         file: "src/_data/site.json"
-        i18n: true
         fields:
           - label: "English"
             name: "en"
