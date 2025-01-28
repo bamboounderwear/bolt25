@@ -13,7 +13,7 @@ i18n:
 collections:
   - name: "pages"
     label: "Pages"
-    folder: "src/pages"
+    folder: "src/{{locale}}"
     create: true
     i18n: true
     fields:
@@ -118,7 +118,7 @@ collections:
 
   - name: "projects"
     label: "Projects"
-    folder: "src/projects"
+    folder: "src/projects/{{locale}}"
     create: true
     i18n: true
     fields:
@@ -210,7 +210,7 @@ collections:
 
   - name: "posts"
     label: "Blog Posts"
-    folder: "src/posts"
+    folder: "src/posts/{{locale}}"
     create: true
     i18n: true
     fields:
