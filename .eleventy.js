@@ -77,32 +77,46 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
-  // Add posts collection for English
+  // Add collections for each language
   eleventyConfig.addCollection("posts_en", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/posts/*.md").sort((a, b) => {
+    return collectionApi.getFilteredByGlob("src/posts/en/*.md").sort((a, b) => {
       return b.date - a.date;
     });
   });
 
-  // Add posts collection for French
   eleventyConfig.addCollection("posts_fr", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/fr/*.md").sort((a, b) => {
       return b.date - a.date;
     });
   });
 
-  // Add projects collection for English
   eleventyConfig.addCollection("projects_en", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/projects/*.md").sort((a, b) => {
+    return collectionApi.getFilteredByGlob("src/projects/en/*.md").sort((a, b) => {
       return b.date - a.date;
     });
   });
 
-  // Add projects collection for French
   eleventyConfig.addCollection("projects_fr", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/projects/fr/*.md").sort((a, b) => {
       return b.date - a.date;
     });
+  });
+
+  // Add localized URL filter
+  eleventyConfig.addFilter("localizeUrl", function(url, locale) {
+    if (locale === "fr") {
+      return `/fr${url}`;
+    }
+    return url;
+  });
+
+  // Add language name filter
+  eleventyConfig.addFilter("languageName", function(locale) {
+    const languages = {
+      en: "English",
+      fr: "Français"
+    };
+    return languages[locale] || locale;
   });
 
   return {
