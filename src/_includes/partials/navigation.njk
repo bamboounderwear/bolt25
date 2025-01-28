@@ -3,9 +3,18 @@
     <a href="{% if locale == 'fr' %}/fr/{% else %}/{% endif %}" class="nav__logo">{{ site[locale].title }}</a>
     <div class="nav__actions">
       <div class="language-switcher">
-        <a href="/" {% if locale != 'fr' %}class="active"{% endif %}>EN</a>
+        {% set currentUrl = page.url %}
+        {% if locale == 'fr' %}
+          <a href="{{ currentUrl | replace('/fr/', '/') }}" class="{% if locale != 'fr' %}active{% endif %}">EN</a>
+        {% else %}
+          <a href="/{{ currentUrl | replace('/', '') }}" class="{% if locale != 'fr' %}active{% endif %}">EN</a>
+        {% endif %}
         <span>/</span>
-        <a href="/fr/" {% if locale == 'fr' %}class="active"{% endif %}>FR</a>
+        {% if locale == 'fr' %}
+          <a href="{{ currentUrl }}" class="{% if locale == 'fr' %}active{% endif %}">FR</a>
+        {% else %}
+          <a href="/fr/{{ currentUrl | replace('/', '') }}" class="{% if locale == 'fr' %}active{% endif %}">FR</a>
+        {% endif %}
       </div>
       <button class="menu-trigger" aria-label="Toggle Menu">Menu</button>
     </div>

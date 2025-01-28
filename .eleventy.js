@@ -114,6 +114,21 @@ module.exports = function(eleventyConfig) {
     return `/${collection}/${slug}/`;
   });
 
+  // Add URL localization filter
+  eleventyConfig.addFilter("localizeUrl", function(url, targetLocale) {
+    const currentLocale = url.startsWith('/fr/') ? 'fr' : 'en';
+    
+    if (currentLocale === targetLocale) {
+      return url;
+    }
+
+    if (targetLocale === 'fr') {
+      return `/fr${url}`;
+    }
+    
+    return url.replace('/fr/', '/');
+  });
+
   return {
     dir: {
       input: "src",
