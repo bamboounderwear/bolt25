@@ -91,9 +91,16 @@ module.exports = function(eleventyConfig) {
     });
   });
 
-  // Add projects collection
-  eleventyConfig.addCollection("projects", function(collectionApi) {
+  // Add projects collection for English
+  eleventyConfig.addCollection("projects_en", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/projects/*.md").sort((a, b) => {
+      return b.date - a.date;
+    });
+  });
+
+  // Add projects collection for French
+  eleventyConfig.addCollection("projects_fr", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/projects/fr/*.md").sort((a, b) => {
       return b.date - a.date;
     });
   });

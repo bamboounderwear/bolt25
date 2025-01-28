@@ -39,7 +39,7 @@ locale: fr
       <p>Découvrez nos réalisations récentes et nos succès</p>
     </div>
     <div class="grid">
-      {%- for project in collections.projects | reverse | limit(2) -%}
+      {%- for project in collections.projects_fr | reverse | limit(2) -%}
         <article class="project-card animate-on-scroll">
           {% if project.data.featuredImage %}
             <img src="{{ project.data.featuredImage }}" alt="{{ project.data.title }}">
