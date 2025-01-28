@@ -3,9 +3,9 @@
     <a href="{% if locale == 'fr' %}/fr/{% else %}/{% endif %}" class="nav__logo">{{ site[locale].title }}</a>
     <div class="nav__actions">
       <div class="language-switcher">
-        <a href="{{ page.url | replace('/fr/', '/') }}" class="{% if locale != 'fr' %}active{% endif %}">EN</a>
+        <a href="{{ page.url | replace('/fr/', '/') }}">EN</a>
         <span>/</span>
-        <a href="/fr{{ page.url | replace('/fr/', '/') }}" class="{% if locale == 'fr' %}active{% endif %}">FR</a>
+        <a href="/fr{{ page.url | replace('/fr/', '/') }}">FR</a>
       </div>
       <button class="menu-trigger" aria-label="Toggle Menu">Menu</button>
     </div>
