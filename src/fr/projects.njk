@@ -4,6 +4,7 @@ title: Projets
 description: Notre portfolio de réalisations clients et études de cas
 permalink: /fr/projects/
 eleventyExcludeFromCollections: true
+locale: fr
 ---
 
 <header class="page-header">
@@ -15,7 +16,7 @@ eleventyExcludeFromCollections: true
 
 <section class="container">
   <div class="grid">
-    {%- for project in collections.projects | reverse -%}
+    {%- for project in collections.projects_fr | reverse -%}
       <article class="project-card animate-on-scroll">
         {% if project.data.featuredImage %}
           <img src="{{ project.data.featuredImage }}" alt="{{ project.data.title }}">
