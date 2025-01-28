@@ -2,30 +2,30 @@
   <div class="container">
     <div class="grid">
       <div>
-        <h3>{{ site.title }}</h3>
-        <p>{{ site.description }}</p>
+        <h3>{{ site[locale].title }}</h3>
+        <p>{{ site[locale].description }}</p>
       </div>
       <div>
-        <h3>Connect</h3>
+        <h3>{% if locale == 'fr' %}Suivez-nous{% else %}Connect{% endif %}</h3>
         <div class="social-links">
-          <a href="{{ site.social.twitter }}" class="social-icon" title="Twitter" target="_blank" rel="noopener noreferrer">
+          <a href="{{ site[locale].social.twitter }}" class="social-icon" title="Twitter" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-twitter"></i>
             <span class="sr-only">Twitter</span>
           </a>
-          <a href="{{ site.social.instagram }}" class="social-icon" title="Instagram" target="_blank" rel="noopener noreferrer">
+          <a href="{{ site[locale].social.instagram }}" class="social-icon" title="Instagram" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-instagram"></i>
             <span class="sr-only">Instagram</span>
           </a>
-          <a href="{{ site.social.linkedin }}" class="social-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+          <a href="{{ site[locale].social.linkedin }}" class="social-icon" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-linkedin"></i>
             <span class="sr-only">LinkedIn</span>
           </a>
         </div>
       </div>
       <div>
-        <h3>Contact</h3>
-        <p>Get in touch to discuss your next project</p>
-        <a href="/contact" class="button">Contact Us</a>
+        <h3>{% if locale == 'fr' %}Contact{% else %}Contact{% endif %}</h3>
+        <p>{% if locale == 'fr' %}Contactez-nous pour discuter de votre prochain projet{% else %}Get in touch to discuss your next project{% endif %}</p>
+        <a href="{% if locale == 'fr' %}/fr/contact{% else %}/contact{% endif %}" class="button">{% if locale == 'fr' %}Contactez-nous{% else %}Contact Us{% endif %}</a>
       </div>
     </div>
   </div>
