@@ -4,6 +4,7 @@ title: Refonte de Marque pour une Startup Tech
 client: InnovateTech
 date: 2023-12-01
 permalink: "/fr/projects/{{ page.fileSlug }}/"
+locale: fr
 components:
   - type: hero
     title: Refonte de Marque pour une Startup Tech

@@ -5,6 +5,7 @@ date: 2023-12-20
 permalink: "/fr/blog/{{ page.fileSlug }}/"
 featuredImage: https://images.unsplash.com/photo-1434626881859-194d67b2b86f
 excerpt: Découvrez des stratégies de marketing de contenu efficaces qui aideront votre entreprise à se développer en 2024.
+locale: fr
 components:
   - type: pageTitle
     title: Stratégies de Marketing de Contenu pour 2024

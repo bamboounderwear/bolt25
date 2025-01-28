@@ -4,6 +4,7 @@ title: Refonte de Plateforme E-commerce
 client: FashionForward
 date: 2023-11-15
 permalink: "/fr/projects/{{ page.fileSlug }}/"
+locale: fr
 featuredImage: https://images.unsplash.com/photo-1460925895917-afdab827c52f
 components:
   - type: hero

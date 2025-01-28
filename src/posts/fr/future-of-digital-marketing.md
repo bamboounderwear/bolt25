@@ -5,6 +5,7 @@ date: 2023-12-15
 permalink: "/fr/blog/{{ page.fileSlug }}/"
 featuredImage: https://images.unsplash.com/photo-1460925895917-afdab827c52f
 excerpt: Explorez les tendances émergentes qui façonneront les stratégies de marketing digital en 2024 et au-delà.
+locale: fr
 components:
   - type: hero
     title: L'Avenir du Marketing Digital en 2024
