@@ -1,0 +1,37 @@
+---
+layout: base.njk
+title: Blog
+description: Aperçus et réflexions sur le marketing numérique, le design et la technologie
+eleventyExcludeFromCollections: true
+permalink: /fr/blog/
+---
+
+<header class="page-header">
+  <div class="container container--narrow">
+    <h1>Blog</h1>
+    <p>Derniers aperçus et mises à jour de l'industrie</p>
+  </div>
+</header>
+
+<section class="container">
+  <div class="grid">
+    {%- for post in collections.posts_fr | reverse -%}
+      <article class="post-card animate-on-scroll">
+        {% if post.data.featuredImage %}
+          <img src="{{ post.data.featuredImage }}" alt="{{ post.data.title }}">
+        {% endif %}
+        <div class="post-card__content">
+          <h2>{{ post.data.title }}</h2>
+          <time datetime="{{ post.date | dateToISO }}">{{ post.date | date("MMMM D, YYYY") }}</time>
+          <p>{{ post.data.excerpt }}</p>
+          <div class="post-card__tags">
+            {% for tag in post.data.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          <a href="{{ post.url }}" class="button">Lire la suite</a>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+</section>

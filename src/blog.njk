@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
 
 <section class="container">
   <div class="grid">
-    {%- for post in collections.posts | reverse -%}
+    {%- for post in collections.posts_en | reverse -%}
       <article class="post-card animate-on-scroll">
         {% if post.data.featuredImage %}
           <img src="{{ post.data.featuredImage }}" alt="{{ post.data.title }}">

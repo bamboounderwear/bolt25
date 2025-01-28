@@ -65,7 +65,7 @@ description: Modern digital marketing agency specializing in brand strategy and 
       <p>Stay updated with our latest thoughts on marketing and design</p>
     </div>
     <div class="grid">
-      {%- for post in collections.posts | reverse | limit(2) -%}
+      {%- for post in collections.posts_en | reverse | limit(2) -%}
         <article class="post-card animate-on-scroll">
           {% if post.data.featuredImage %}
             <img src="{{ post.data.featuredImage }}" alt="{{ post.data.title }}">
