@@ -5,7 +5,9 @@
     "url": "https://example.com",
     "nav": {
       "home": "Home",
-      "projects": "Projects"
+      "projects": "Projects",
+      "blog": "Blog",
+      "contact": "Contact"
     },
     "social": {
       "twitter": "https://twitter.com/agency",
@@ -37,7 +39,9 @@
     "url": "https://example.com",
     "nav": {
       "home": "Accueil",
-      "projects": "Projets"
+      "projects": "Projets",
+      "blog": "Blog",
+      "contact": "Contact"
     },
     "social": {
       "twitter": "https://twitter.com/agency",
