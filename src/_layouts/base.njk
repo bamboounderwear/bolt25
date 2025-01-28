@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ locale | default('en') }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} | {{ site.title }}</title>
-    <meta name="description" content="{{ description or site.description }}">
+    <title>{{ title }} | {{ site[locale].title }}</title>
+    <meta name="description" content="{{ description or site[locale].description }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -35,7 +35,7 @@
                 {% elif component.type == "gallery" %}
                     {% include "components/gallery.njk" %}
                 {% elif component.type == "twoColumns" %}
-                    {% include "components/two-images.njk" %}
+                    {% include "components/two-columns.njk" %}
                 {% elif component.type == "leadMagnet" %}
                     {% include "components/lead-magnet.njk" %}
                 {% endif %}
