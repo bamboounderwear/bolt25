@@ -1,15 +1,22 @@
 <nav class="nav">
   <div class="nav__container container">
-    <a href="/" class="nav__logo">Agency</a>
-    <button class="menu-trigger" aria-label="Toggle Menu">Menu</button>
+    <a href="{% if locale == 'fr' %}/fr/{% else %}/{% endif %}" class="nav__logo">{{ site[locale].title }}</a>
+    <div class="nav__actions">
+      <div class="language-switcher">
+        <a href="/" {% if locale != 'fr' %}class="active"{% endif %}>EN</a>
+        <span>/</span>
+        <a href="/fr/" {% if locale == 'fr' %}class="active"{% endif %}>FR</a>
+      </div>
+      <button class="menu-trigger" aria-label="Toggle Menu">Menu</button>
+    </div>
   </div>
   <div class="menu-overlay">
     <div class="container">
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="{% if locale == 'fr' %}/fr/{% else %}/{% endif %}">{{ 'Accueil' if locale == 'fr' else 'Home' }}</a></li>
+        <li><a href="{% if locale == 'fr' %}/fr/projects{% else %}/projects{% endif %}">{{ 'Projets' if locale == 'fr' else 'Projects' }}</a></li>
+        <li><a href="{% if locale == 'fr' %}/fr/blog{% else %}/blog{% endif %}">Blog</a></li>
+        <li><a href="{% if locale == 'fr' %}/fr/contact{% else %}/contact{% endif %}">Contact</a></li>
       </ul>
     </div>
   </div>

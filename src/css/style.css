@@ -1034,3 +1034,44 @@ section:not(:first-child) {
     padding: var(--space-md);
   }
 }
+
+/* Add these styles to your existing CSS file */
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.language-switcher a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.language-switcher a:hover {
+  color: #FFFFFF;
+}
+
+.language-switcher a.active {
+  color: #FFFFFF;
+  font-weight: 500;
+}
+
+.language-switcher span {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .nav__actions {
+    gap: var(--space-sm);
+  }
+}
