@@ -21,8 +21,8 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
-      - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
-      - { label: "Locale", name: "locale", widget: "hidden", pattern: [".+"], default: "{{i18n.locale}}" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk", required: true }
+      - { label: "Locale", name: "locale", widget: "select", options: ["en", "fr"], default: "{{i18n.locale}}", required: true }
       - label: "Components"
         name: "components"
         widget: "list"
@@ -76,8 +76,8 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
-      - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk" }
-      - { label: "Locale", name: "locale", widget: "hidden", pattern: [".+"], default: "{{i18n.locale}}" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk", required: true }
+      - { label: "Locale", name: "locale", widget: "select", options: ["en", "fr"], default: "{{i18n.locale}}", required: true }
       - label: "Components"
         name: "components"
         widget: "list"
