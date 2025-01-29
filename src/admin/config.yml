@@ -29,6 +29,13 @@ collections:
         widget: "list"
         i18n: true
         types:
+          - label: "Page Title"
+            name: "pageTitle"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", i18n: true }
+              - { label: "Subtitle", name: "subtitle", widget: "text", i18n: true }
+
           - label: "Markdown Block"
             name: "markdown"
             widget: "object"
