@@ -10,6 +10,19 @@ excerpt: >+
 
 layout: project.njk
 locale: en
+components:
+  - type: hero
+    fullHeight: true
+    title: Adidas House
+    subtitle: >+
+      The Adidas Concept House, an innovative creation that combines ideas,
+      architectural design, and brand identity into a dynamic,
+      yet-to-be-realized space.
+
+    image: /assets/images/adidas.jpg
+    cta:
+      text: Go
+      url: "#"
 challenge: The Adidas Concept House, an innovative creation that combines ideas,
   architectural design, and brand identity into a dynamic, yet-to-be-realized
   space.
