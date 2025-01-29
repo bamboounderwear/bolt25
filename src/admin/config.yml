@@ -1,6 +1,12 @@
 backend:
   name: git-gateway
   branch: main
+  commit_messages:
+    create: 'Create {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: '[skip ci] Upload "{{path}}"'
+    deleteMedia: '[skip ci] Delete "{{path}}"'
 
 media_folder: "src/assets/images"
 public_folder: "/assets/images"
@@ -24,6 +30,7 @@ collections:
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
       - { label: "Locale", name: "locale", widget: "select", options: ["en", "fr"] }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/{{#if locale}}{{locale}}/{{/if}}blog/{{ page.fileSlug }}/" }
       - label: "Components"
         name: "components"
         widget: "list"
@@ -135,6 +142,7 @@ collections:
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk" }
       - { label: "Locale", name: "locale", widget: "select", options: ["en", "fr"] }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/{{#if locale}}{{locale}}/{{/if}}projects/{{ page.fileSlug }}/" }
       - label: "Components"
         name: "components"
         widget: "list"
