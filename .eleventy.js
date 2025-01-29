@@ -79,27 +79,25 @@ module.exports = function(eleventyConfig) {
 
   // Add collections for each language
   eleventyConfig.addCollection("posts_en", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/content/en/posts/*.md").sort((a, b) => {
-      return b.date - a.date;
-    });
+    return collectionApi.getFilteredByGlob("src/content/blog/*.md")
+      .filter(item => !item.fileSlug.endsWith('.fr'))
+      .sort((a, b) => b.date - a.date);
   });
 
   eleventyConfig.addCollection("posts_fr", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/content/fr/posts/*.md").sort((a, b) => {
-      return b.date - a.date;
-    });
+    return collectionApi.getFilteredByGlob("src/content/blog/*.fr.md")
+      .sort((a, b) => b.date - a.date);
   });
 
   eleventyConfig.addCollection("projects_en", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/content/en/projects/*.md").sort((a, b) => {
-      return b.date - a.date;
-    });
+    return collectionApi.getFilteredByGlob("src/content/projects/*.md")
+      .filter(item => !item.fileSlug.endsWith('.fr'))
+      .sort((a, b) => b.date - a.date);
   });
 
   eleventyConfig.addCollection("projects_fr", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/content/fr/projects/*.md").sort((a, b) => {
-      return b.date - a.date;
-    });
+    return collectionApi.getFilteredByGlob("src/content/projects/*.fr.md")
+      .sort((a, b) => b.date - a.date);
   });
 
   return {
