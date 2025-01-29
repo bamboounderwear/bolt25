@@ -1,0 +1,22 @@
+{% if componentData.type == "hero" %}
+  <section class="hero{% if componentData.fullHeight %} hero--full-height{% endif %}">
+    {% if componentData.type === 'video' and componentData.videoUrl %}
+      <video class="hero__background" autoplay muted loop playsinline>
+        <source src="{{ componentData.videoUrl }}" type="video/mp4">
+      </video>
+    {% elif componentData.image %}
+      <img class="hero__background" src="{{ componentData.image }}" alt="{{ componentData.title }}">
+    {% endif %}
+    <div class="hero__content container">
+      {% if componentData.title %}
+        <h1 class="animate-on-scroll">{{ componentData.title }}</h1>
+      {% endif %}
+      {% if componentData.subtitle %}
+        <p class="animate-on-scroll">{{ componentData.subtitle }}</p>
+      {% endif %}
+      {% if componentData.cta %}
+        <a href="{{ componentData.cta.url }}" class="button animate-on-scroll">{{ componentData.cta.text }}</a>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}

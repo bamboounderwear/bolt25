@@ -1,0 +1,15 @@
+{% if site.popup.enabled %}
+<div class="popup-overlay" id="popup">
+  <div class="popup">
+    <button class="popup__close" aria-label="Close popup">&times;</button>
+    <div class="popup__content">
+      <h2 class="popup__title">{{ site.popup.title }}</h2>
+      <div class="popup__text">{{ site.popup.content | markdown | safe }}</div>
+      <form class="lead-magnet__form" name="popup-form" method="POST" data-netlify="true">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit" class="button">{{ site.popup.buttonText }}</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endif %}

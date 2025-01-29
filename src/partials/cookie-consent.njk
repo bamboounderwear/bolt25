@@ -1,0 +1,15 @@
+{% if site.cookieConsent.enabled %}
+<div class="cookie-consent" id="cookieConsent">
+  <button class="cookie-consent__close" aria-label="Close cookie banner">&times;</button>
+  <div class="cookie-consent__container container">
+    <div class="cookie-consent__content">
+      <h3 class="cookie-consent__title">{{ site.cookieConsent.title }}</h3>
+      <p class="cookie-consent__text">{{ site.cookieConsent.content | markdown | safe }}</p>
+    </div>
+    <div class="cookie-consent__actions">
+      <button class="button" id="acceptCookies">{{ site.cookieConsent.acceptText }}</button>
+      <button class="button" id="declineCookies">{{ site.cookieConsent.declineText }}</button>
+    </div>
+  </div>
+</div>
+{% endif %}
