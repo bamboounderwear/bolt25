@@ -13,17 +13,19 @@ i18n:
 collections:
   - name: "posts"
     label: "Blog Posts"
-    folder: "src/content/{{locale}}/posts"
+    folder: "src/content/en/posts"
     create: true
-    i18n: true
+    i18n:
+      structure: multiple_folders
+      locales: [en, fr]
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
-      - { label: "Locale", name: "locale", widget: "hidden", default: "{{locale}}" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/{{locale}}/blog/{{ page.fileSlug }}/" }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/blog/{{ page.fileSlug }}/" }
       - label: "Components"
         name: "components"
         widget: "list"
@@ -75,9 +77,11 @@ collections:
 
   - name: "projects"
     label: "Projects"
-    folder: "src/content/{{locale}}/projects"
+    folder: "src/content/en/projects"
     create: true
-    i18n: true
+    i18n:
+      structure: multiple_folders
+      locales: [en, fr]
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
       - { label: "Client", name: "client", widget: "string" }
@@ -85,8 +89,8 @@ collections:
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk" }
-      - { label: "Locale", name: "locale", widget: "hidden", default: "{{locale}}" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/{{locale}}/projects/{{ page.fileSlug }}/" }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/projects/{{ page.fileSlug }}/" }
       - label: "Components"
         name: "components"
         widget: "list"
