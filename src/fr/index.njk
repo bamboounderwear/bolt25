@@ -1,0 +1,106 @@
+---
+layout: base.njk
+title: Accueil
+description: Agence de marketing numérique moderne spécialisée dans la stratégie de marque et les solutions créatives
+permalink: /fr/
+locale: fr
+---
+
+<section class="hero">
+  <img class="hero__background" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f" alt="Agence de Marketing Moderne">
+  <div class="hero__content">
+    <h1 class="animate-on-scroll">{{ site[locale].title }}</h1>
+    <p class="animate-on-scroll">Nous créons des expériences numériques qui transforment les marques</p>
+    <a href="#contact" class="button animate-on-scroll">Contactez-nous</a>
+  </div>
+</section>
+
+<section class="container">
+  <div class="grid">
+    <div class="animate-on-scroll">
+      <h2>Stratégie</h2>
+      <p>Stratégies marketing basées sur les données qui produisent des résultats</p>
+    </div>
+    <div class="animate-on-scroll">
+      <h2>Design</h2>
+      <p>Designs beaux et fonctionnels qui engagent les utilisateurs</p>
+    </div>
+    <div class="animate-on-scroll">
+      <h2>Développement</h2>
+      <p>Solutions technologiques de pointe pour les marques modernes</p>
+    </div>
+  </div>
+</section>
+
+<section class="featured-section">
+  <div class="container">
+    <div class="featured-section__header">
+      <h2>Projets Vedettes</h2>
+      <p>Découvrez nos réalisations récentes et nos succès</p>
+    </div>
+    <div class="grid">
+      {%- for project in collections.projects_fr | reverse | limit(2) -%}
+        <article class="project-card animate-on-scroll">
+          {% if project.data.featuredImage %}
+            <img src="{{ project.data.featuredImage }}" alt="{{ project.data.title }}">
+          {% endif %}
+          <div class="project-card__content">
+            <h2>{{ project.data.title }}</h2>
+            <p class="project-card__client">{{ project.data.client }}</p>
+            <div class="project-card__tags">
+              {% for tag in project.data.tags %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+            <a href="{{ project.url }}" class="button">Voir le Projet</a>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="featured-section">
+  <div class="container">
+    <div class="featured-section__header">
+      <h2>Derniers Articles</h2>
+      <p>Restez informé de nos dernières réflexions sur le marketing et le design</p>
+    </div>
+    <div class="grid">
+      {%- for post in collections.posts_fr | reverse | limit(2) -%}
+        <article class="post-card animate-on-scroll">
+          {% if post.data.featuredImage %}
+            <img src="{{ post.data.featuredImage }}" alt="{{ post.data.title }}">
+          {% endif %}
+          <div class="post-card__content">
+            <h2>{{ post.data.title }}</h2>
+            <time datetime="{{ post.date | dateToISO }}">{{ post.date | date("MMMM D, YYYY") }}</time>
+            <p>{{ post.data.excerpt }}</p>
+            <div class="post-card__tags">
+              {% for tag in post.data.tags %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+            <a href="{{ post.url }}" class="button">Lire la Suite</a>
+          </div>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<section class="lead-magnet container">
+  <div class="lead-magnet__grid">
+    <div class="lead-magnet__content">
+      <h2>{{ site[locale].popup.title }}</h2>
+      <p>{{ site[locale].popup.content | safe }}</p>
+      <form class="lead-magnet__form" name="newsletter" method="POST" data-netlify="true">
+        <input type="email" name="email" placeholder="Entrez votre email" required>
+        <button type="submit" class="button">{{ site[locale].popup.buttonText }}</button>
+      </form>
+    </div>
+    <div class="lead-magnet__image">
+      <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f" alt="Newsletter Marketing">
+    </div>
+  </div>
+</section>

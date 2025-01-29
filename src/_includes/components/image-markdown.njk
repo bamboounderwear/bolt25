@@ -1,0 +1,12 @@
+{% if componentData.type == "imageMarkdown" %}
+  <div class="image-markdown container">
+    <div class="image-markdown__grid{% if componentData.imagePosition === 'right' %} image-markdown__grid--reverse{% endif %}">
+      <div class="image-markdown__image">
+        <img src="{{ componentData.image }}" alt="{{ componentData.imageAlt }}">
+      </div>
+      <div class="image-markdown__content">
+        {{ componentData.content | markdown | safe }}
+      </div>
+    </div>
+  </div>
+{% endif %}

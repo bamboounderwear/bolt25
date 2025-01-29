@@ -1,0 +1,30 @@
+<nav class="nav">
+  <div class="nav__container container">
+    <a href="{% if locale == 'fr' %}/fr/{% else %}/{% endif %}" class="nav__logo">{{ site[locale].title }}</a>
+    <div class="nav__actions">
+      <div class="language-switcher">
+        {% set currentPath = page.url %}
+        {% if currentPath.startsWith('/fr/') %}
+          {% set otherPath = currentPath | replace('/fr/', '/') %}
+        {% else %}
+          {% set otherPath = '/fr' + currentPath %}
+        {% endif %}
+
+        <a href="{% if locale == 'fr' %}{{ otherPath }}{% else %}{{ currentPath }}{% endif %}" {% if locale != 'fr' %}class="active"{% endif %}>EN</a>
+        <span>/</span>
+        <a href="{% if locale == 'fr' %}{{ currentPath }}{% else %}{{ otherPath }}{% endif %}" {% if locale == 'fr' %}class="active"{% endif %}>FR</a>
+      </div>
+      <button class="menu-trigger" aria-label="Toggle Menu">Menu</button>
+    </div>
+  </div>
+  <div class="menu-overlay">
+    <div class="container">
+      <ul>
+        <li><a href="{% if locale == 'fr' %}/fr/{% else %}/{% endif %}">{{ site[locale].nav.home }}</a></li>
+        <li><a href="{% if locale == 'fr' %}/fr/projects{% else %}/projects{% endif %}">{{ site[locale].nav.projects }}</a></li>
+        <li><a href="{% if locale == 'fr' %}/fr/blog{% else %}/blog{% endif %}">{{ site[locale].nav.blog }}</a></li>
+        <li><a href="{% if locale == 'fr' %}/fr/contact{% else %}/contact{% endif %}">{{ site[locale].nav.contact }}</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

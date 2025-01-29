@@ -1,0 +1,55 @@
+---
+layout: base.njk
+---
+<article class="project">
+  {% if components %}
+    {% for component in components %}
+      {% set componentData = component %}
+      {% if component.type == "hero" %}
+        {% include "components/hero-banner.njk" %}
+      {% elif component.type == "pageTitle" %}
+        {% include "components/page-title.njk" %}
+      {% elif component.type == "markdown" %}
+        {% include "components/markdown-block.njk" %}
+      {% elif component.type == "twoImages" %}
+        {% include "components/two-images.njk" %}
+      {% elif component.type == "imageMarkdown" %}
+        {% include "components/image-markdown.njk" %}
+      {% elif component.type == "threeColumns" %}
+        {% include "components/three-columns.njk" %}
+      {% elif component.type == "gallery" %}
+        {% include "components/gallery.njk" %}
+      {% elif component.type == "twoColumns" %}
+        {% include "components/two-columns.njk" %}
+      {% elif component.type == "leadMagnet" %}
+        {% include "components/lead-magnet.njk" %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  <nav class="project-navigation container">
+    <div class="project-navigation__grid">
+      {%- if locale == 'fr' -%}
+        {%- set previousPost = collections.projects_fr | getPreviousCollectionItem %}
+        {%- set nextPost = collections.projects_fr | getNextCollectionItem %}
+      {%- else -%}
+        {%- set previousPost = collections.projects_en | getPreviousCollectionItem %}
+        {%- set nextPost = collections.projects_en | getNextCollectionItem %}
+      {%- endif -%}
+
+      {% if previousPost %}
+        <a href="{{ previousPost.url }}" class="project-navigation__item project-navigation__item--prev">
+          <span>{% if locale == 'fr' %}Projet Précédent{% else %}Previous Project{% endif %}</span>
+          <h3>{{ previousPost.data.title }}</h3>
+        </a>
+      {% endif %}
+
+      {% if nextPost %}
+        <a href="{{ nextPost.url }}" class="project-navigation__item project-navigation__item--next">
+          <span>{% if locale == 'fr' %}Projet Suivant{% else %}Next Project{% endif %}</span>
+          <h3>{{ nextPost.data.title }}</h3>
+        </a>
+      {% endif %}
+    </div>
+  </nav>
+</article>

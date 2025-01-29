@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ description or site.description }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/main.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    {% include "partials/navigation.njk" %}
+    
+    <main>
+        {% if components %}
+            {% for component in components %}
+                {% set componentData = component %}
+                {% if component.type == "hero" %}
+                    {% include "components/hero-banner.njk" %}
+                {% elif component.type == "pageTitle" %}
+                    {% include "components/page-title.njk" %}
+                {% elif component.type == "markdown" %}
+                    {% include "components/markdown-block.njk" %}
+                {% elif component.type == "twoImages" %}
+                    {% include "components/two-images.njk" %}
+                {% elif component.type == "imageMarkdown" %}
+                    {% include "components/image-markdown.njk" %}
+                {% elif component.type == "threeColumns" %}
+                    {% include "components/three-columns.njk" %}
+                {% elif component.type == "gallery" %}
+                    {% include "components/gallery.njk" %}
+                {% elif component.type == "twoColumns" %}
+                    {% include "components/two-columns.njk" %}
+                {% elif component.type == "leadMagnet" %}
+                    {% include "components/lead-magnet.njk" %}
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        
+        {{ content | safe }}
+    </main>
+
+    {% include "partials/footer.njk" %}
+    {% include "partials/popup.njk" %}
+    {% include "partials/cookie-consent.njk" %}
+
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
