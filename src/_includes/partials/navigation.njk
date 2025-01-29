@@ -4,17 +4,15 @@
     <div class="nav__actions">
       <div class="language-switcher">
         {% set currentPath = page.url %}
-        {% if locale == 'fr' %}
-          {% set enPath = currentPath | replace('/fr/', '/') %}
-          <a href="{{ enPath }}" {% if locale != 'fr' %}class="active"{% endif %}>EN</a>
-          <span>/</span>
-          <a href="{{ currentPath }}" {% if locale == 'fr' %}class="active"{% endif %}>FR</a>
+        {% if currentPath.startsWith('/fr/') %}
+          {% set otherPath = currentPath | replace('/fr/', '/') %}
         {% else %}
-          {% set frPath = '/fr' + currentPath %}
-          <a href="{{ currentPath }}" {% if locale != 'fr' %}class="active"{% endif %}>EN</a>
-          <span>/</span>
-          <a href="{{ frPath }}" {% if locale == 'fr' %}class="active"{% endif %}>FR</a>
+          {% set otherPath = '/fr' + currentPath %}
         {% endif %}
+
+        <a href="{% if locale == 'fr' %}{{ otherPath }}{% else %}{{ currentPath }}{% endif %}" {% if locale != 'fr' %}class="active"{% endif %}>EN</a>
+        <span>/</span>
+        <a href="{% if locale == 'fr' %}{{ currentPath }}{% else %}{{ otherPath }}{% endif %}" {% if locale == 'fr' %}class="active"{% endif %}>FR</a>
       </div>
       <button class="menu-trigger" aria-label="Toggle Menu">Menu</button>
     </div>

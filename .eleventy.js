@@ -102,33 +102,6 @@ module.exports = function(eleventyConfig) {
     });
   });
 
-  // Add permalink filter
-  eleventyConfig.addFilter("generatePermalink", function(page) {
-    const locale = page.data.locale || 'en';
-    const collection = page.inputPath.includes('/posts/') ? 'blog' : 'projects';
-    const slug = page.fileSlug;
-    
-    if (locale === 'fr') {
-      return `/fr/${collection}/${slug}/`;
-    }
-    return `/${collection}/${slug}/`;
-  });
-
-  // Add URL localization filter
-  eleventyConfig.addFilter("localizeUrl", function(url, targetLocale) {
-    const currentLocale = url.startsWith('/fr/') ? 'fr' : 'en';
-    
-    if (currentLocale === targetLocale) {
-      return url;
-    }
-
-    if (targetLocale === 'fr') {
-      return `/fr${url}`;
-    }
-    
-    return url.replace('/fr/', '/');
-  });
-
   return {
     dir: {
       input: "src",

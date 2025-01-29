@@ -4,6 +4,7 @@ title: Brand Refresh for Tech Startup
 client: InnovateTech
 locale: en
 date: 2023-12-01
+permalink: "/projects/{{ page.fileSlug }}/"
 components:
   - type: hero
     title: Brand Refresh for Tech Startup
@@ -77,3 +78,4 @@ tags:
   - Branding
   - Strategy
   - Design
+---
