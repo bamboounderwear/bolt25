@@ -5,7 +5,6 @@ date: 2023-12-20
 permalink: "/blog/{{ page.fileSlug }}/"
 featuredImage: https://images.unsplash.com/photo-1434626881859-194d67b2b86f
 excerpt: Learn effective content marketing strategies that will help your business grow in 2024.
-locale: en
 components:
   - type: pageTitle
     title: Content Marketing Strategies for 2024

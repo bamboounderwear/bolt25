@@ -2,9 +2,9 @@
 layout: project.njk
 title: Brand Refresh for Tech Startup
 client: InnovateTech
-locale: en
 date: 2023-12-01
 permalink: "/projects/{{ page.fileSlug }}/"
+featuredImage: https://images.unsplash.com/photo-1542744173-8e7e53415bb0
 components:
   - type: hero
     title: Brand Refresh for Tech Startup
@@ -61,7 +61,7 @@ components:
     buttonText: Download Guide
     image: https://images.unsplash.com/photo-1542744094-97abc35975b0
     imageAlt: Branding guide cover
-featuredImage: https://images.unsplash.com/photo-1542744173-8e7e53415bb0
+
 challenge: |
   InnovateTech needed a complete brand overhaul to better position themselves in the competitive tech market. Their existing brand identity failed to communicate their innovative approach and market leadership.
 solution: |

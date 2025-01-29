@@ -19,7 +19,7 @@ i18n:
 collections:
   - name: "posts"
     label: "Blog Posts"
-    folder: "src/content/posts"
+    folder: "src/content/blog"
     create: true
     i18n: true
     fields:
@@ -28,6 +28,7 @@ collections:
       - { label: "Featured Image", name: "featuredImage", widget: "image", i18n: duplicate }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk", i18n: duplicate }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/blog/{{ page.fileSlug }}/", i18n: duplicate }
       - label: "Components"
         name: "components"
         widget: "list"
@@ -150,6 +151,7 @@ collections:
       - { label: "Featured Image", name: "featuredImage", widget: "image", i18n: duplicate }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk", i18n: duplicate }
+      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/projects/{{ page.fileSlug }}/", i18n: duplicate }
       - label: "Components"
         name: "components"
         widget: "list"
