@@ -16,13 +16,21 @@ collections:
     folder: "src/posts"
     create: true
     i18n: true
+    path: "{{locale}}/{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
-      - { label: "Locale", name: "locale", widget: "hidden", pattern: ["en", "fr"] }
+      - { 
+          label: "Locale", 
+          name: "locale", 
+          widget: "select", 
+          options: ["en", "fr"],
+          default: "en",
+          required: true
+        }
       - label: "Components"
         name: "components"
         widget: "list"
@@ -70,6 +78,7 @@ collections:
     folder: "src/projects"
     create: true
     i18n: true
+    path: "{{locale}}/{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
       - { label: "Client", name: "client", widget: "string" }
@@ -77,7 +86,14 @@ collections:
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk" }
-      - { label: "Locale", name: "locale", widget: "hidden", pattern: ["en", "fr"] }
+      - { 
+          label: "Locale", 
+          name: "locale", 
+          widget: "select", 
+          options: ["en", "fr"],
+          default: "en",
+          required: true
+        }
       - label: "Components"
         name: "components"
         widget: "list"
@@ -171,6 +187,14 @@ collections:
               - { label: "Site Title", name: "title", widget: "string" }
               - { label: "Site Description", name: "description", widget: "text" }
               - { label: "Site URL", name: "url", widget: "string" }
+              - label: "Navigation"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "Home", name: "home", widget: "string" }
+                  - { label: "Projects", name: "projects", widget: "string" }
+                  - { label: "Blog", name: "blog", widget: "string" }
+                  - { label: "Contact", name: "contact", widget: "string" }
               - label: "Social Media"
                 name: "social"
                 widget: "object"
@@ -208,6 +232,14 @@ collections:
               - { label: "Site Title", name: "title", widget: "string" }
               - { label: "Site Description", name: "description", widget: "text" }
               - { label: "Site URL", name: "url", widget: "string" }
+              - label: "Navigation"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - { label: "Home", name: "home", widget: "string" }
+                  - { label: "Projects", name: "projects", widget: "string" }
+                  - { label: "Blog", name: "blog", widget: "string" }
+                  - { label: "Contact", name: "contact", widget: "string" }
               - label: "Social Media"
                 name: "social"
                 widget: "object"
