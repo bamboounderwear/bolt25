@@ -13,24 +13,37 @@ i18n:
 collections:
   - name: "posts"
     label: "Blog Posts"
-    folder: "src/content/en/posts"
+    folder: "src/content"
+    path: "{{locale}}/posts/{{slug}}"
     create: true
-    i18n:
-      structure: multiple_folders
-      locales: [en, fr]
+    i18n: true
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "post.njk" }
-      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/blog/{{ page.fileSlug }}/" }
+      - { label: "Locale", name: "locale", widget: "select", options: ["en", "fr"] }
       - label: "Components"
         name: "components"
         widget: "list"
         i18n: true
         types:
+          - label: "Hero Banner"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", i18n: true }
+              - { label: "Subtitle", name: "subtitle", widget: "text", i18n: true }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Full Height", name: "fullHeight", widget: "boolean", default: false }
+              - label: "CTA"
+                name: "cta"
+                widget: "object"
+                fields:
+                  - { label: "Text", name: "text", widget: "string", i18n: true }
+                  - { label: "URL", name: "url", widget: "string" }
+
           - label: "Page Title"
             name: "pageTitle"
             widget: "object"
@@ -62,6 +75,39 @@ collections:
               - { label: "Image Alt", name: "imageAlt", widget: "string", i18n: true }
               - { label: "Content", name: "content", widget: "markdown", i18n: true }
           
+          - label: "Three Columns"
+            name: "threeColumns"
+            widget: "object"
+            fields:
+              - label: "Columns"
+                name: "columns"
+                widget: "list"
+                fields:
+                  - { label: "Content", name: "content", widget: "markdown", i18n: true }
+                max: 3
+          
+          - label: "Two Columns"
+            name: "twoColumns"
+            widget: "object"
+            fields:
+              - label: "Columns"
+                name: "columns"
+                widget: "list"
+                fields:
+                  - { label: "Content", name: "content", widget: "markdown", i18n: true }
+                max: 2
+          
+          - label: "Gallery"
+            name: "gallery"
+            widget: "object"
+            fields:
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                fields:
+                  - { label: "Image", name: "url", widget: "image" }
+                  - { label: "Alt Text", name: "alt", widget: "string", i18n: true }
+          
           - label: "Lead Magnet"
             name: "leadMagnet"
             widget: "object"
@@ -77,11 +123,10 @@ collections:
 
   - name: "projects"
     label: "Projects"
-    folder: "src/content/en/projects"
+    folder: "src/content"
+    path: "{{locale}}/projects/{{slug}}"
     create: true
-    i18n:
-      structure: multiple_folders
-      locales: [en, fr]
+    i18n: true
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
       - { label: "Client", name: "client", widget: "string" }
@@ -89,8 +134,7 @@ collections:
       - { label: "Featured Image", name: "featuredImage", widget: "image" }
       - { label: "Excerpt", name: "excerpt", widget: "text", i18n: true }
       - { label: "Layout", name: "layout", widget: "hidden", default: "project.njk" }
-      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
-      - { label: "Permalink", name: "permalink", widget: "hidden", default: "/projects/{{ page.fileSlug }}/" }
+      - { label: "Locale", name: "locale", widget: "select", options: ["en", "fr"] }
       - label: "Components"
         name: "components"
         widget: "list"
